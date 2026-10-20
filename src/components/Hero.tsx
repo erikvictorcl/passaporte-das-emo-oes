@@ -6,6 +6,234 @@ interface HeroProps {
   onPreviewOpen?: (mapTitle: string) => void;
 }
 
+const FloralBushBackground: React.FC = () => (
+  <svg
+    viewBox="0 0 280 200"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-36 min-[360px]:w-44 min-[400px]:w-48 sm:w-60 md:w-72 lg:w-80 h-auto drop-shadow-sm select-none"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient id="leafGradDark" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#40916C" />
+        <stop offset="100%" stopColor="#1B4332" />
+      </linearGradient>
+      <linearGradient id="leafGradMid" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#74C69D" />
+        <stop offset="100%" stopColor="#2D6A4F" />
+      </linearGradient>
+      <linearGradient id="leafGradLight" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stopColor="#B7E4C7" />
+        <stop offset="100%" stopColor="#52B788" />
+      </linearGradient>
+      <linearGradient id="peachFlowerGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#FDBA74" />
+        <stop offset="100%" stopColor="#E07A5F" />
+      </linearGradient>
+    </defs>
+
+    {/* Back Foliage Clusters (Spread out towards left space and underneath cards on right) */}
+    <ellipse cx="60" cy="135" rx="48" ry="36" fill="url(#leafGradDark)" opacity="0.85" />
+    <ellipse cx="115" cy="130" rx="52" ry="38" fill="url(#leafGradDark)" opacity="0.9" />
+    <ellipse cx="175" cy="135" rx="55" ry="38" fill="url(#leafGradDark)" opacity="0.8" />
+    <ellipse cx="230" cy="145" rx="42" ry="30" fill="url(#leafGradDark)" opacity="0.75" />
+
+    {/* Mid Foliage Clusters */}
+    <ellipse cx="45" cy="110" rx="36" ry="28" fill="url(#leafGradMid)" />
+    <ellipse cx="90" cy="98" rx="44" ry="34" fill="url(#leafGradMid)" />
+    <ellipse cx="145" cy="108" rx="46" ry="32" fill="url(#leafGradMid)" />
+    <ellipse cx="200" cy="120" rx="40" ry="28" fill="url(#leafGradMid)" />
+
+    {/* Front Foliage & Fronds (Prominently branching out towards the left empty space) */}
+    <ellipse cx="70" cy="85" rx="32" ry="24" fill="url(#leafGradLight)" />
+    <ellipse cx="120" cy="80" rx="34" ry="26" fill="url(#leafGradLight)" />
+
+    {/* Botanical leaf fronds and stems reaching towards left gap */}
+    <path d="M25 155 Q 35 100 65 78 Q 50 105 45 155 Z" fill="#2D6A4F" opacity="0.8" />
+    <path d="M60 160 Q 95 105 130 72 Q 110 102 90 160 Z" fill="#2D6A4F" opacity="0.7" />
+
+    {/* Delicate individual decorative leaves on the left periphery */}
+    <path d="M18 95 C 6 78 24 64 36 82 C 30 94 18 95 18 95 Z" fill="#52B788" />
+    <path d="M38 60 C 30 42 50 35 62 52 C 50 64 38 60 38 60 Z" fill="#74C69D" />
+    <path d="M85 45 C 80 28 100 24 110 40 C 102 52 85 45 85 45 Z" fill="#95D5B2" />
+    <path d="M135 48 C 130 32 148 28 158 44 C 150 56 135 48 135 48 Z" fill="#74C69D" />
+
+    {/* Flower 1: Beautiful, delicate Ivory & Chamomile Daisy on the outer left space */}
+    <g transform="translate(48, 88)">
+      {/* 8 Chamomile Petals in Soft Ivory/Cream */}
+      <circle cx="-10" cy="-6" r="6.5" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="0" cy="-11" r="6.5" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="10" cy="-6" r="6.5" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="11" cy="4" r="6.5" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="6" cy="11" r="6.5" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="-6" cy="11" r="6.5" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="-11" cy="4" r="6.5" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      {/* Golden Warm Pistil Center */}
+      <circle cx="0" cy="0" r="6" fill="#E9C46A" />
+      <circle cx="0" cy="0" r="3" fill="#D97706" />
+      <circle cx="0" cy="0" r="1.5" fill="#781428" />
+    </g>
+
+    {/* Flower 2: Warm Terracotta-Peach Blossom (Upper Left) */}
+    <g transform="translate(95, 62)">
+      <circle cx="-9" cy="-5" r="7" fill="url(#peachFlowerGrad)" />
+      <circle cx="9" cy="-5" r="7" fill="url(#peachFlowerGrad)" />
+      <circle cx="-7" cy="8" r="7" fill="url(#peachFlowerGrad)" />
+      <circle cx="7" cy="8" r="7" fill="url(#peachFlowerGrad)" />
+      <circle cx="0" cy="-11" r="7" fill="url(#peachFlowerGrad)" />
+      <circle cx="0" cy="0" r="5.5" fill="#FDE047" />
+      <circle cx="0" cy="0" r="2.5" fill="#FAF6EE" />
+    </g>
+
+    {/* Flower 3: Delicate Chamomile Blossom (Center-Right towards the edge) */}
+    <g transform="translate(142, 78)">
+      <circle cx="-8" cy="-5" r="6" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="8" cy="-5" r="6" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="-6" cy="7" r="6" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="6" cy="7" r="6" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="0" cy="-9" r="6" fill="#FAF6EE" stroke="#E9C46A" strokeWidth="0.8" />
+      <circle cx="0" cy="0" r="5" fill="#F4A261" />
+      <circle cx="0" cy="0" r="2" fill="#781428" />
+    </g>
+
+    {/* Brand Bordeaux & Gold Accent Buds */}
+    <circle cx="24" cy="118" r="4.5" fill="#781428" />
+    <circle cx="22" cy="116" r="1.6" fill="#FAF6EE" />
+
+    <circle cx="78" cy="125" r="4" fill="#781428" />
+    <circle cx="76" cy="123" r="1.5" fill="#FAF6EE" />
+
+    <circle cx="168" cy="112" r="4.5" fill="#781428" />
+    <circle cx="166" cy="110" r="1.5" fill="#FAF6EE" />
+
+    {/* Small Golden Starlight Sparkles */}
+    <circle cx="34" cy="48" r="2.5" fill="#F59E0B" />
+    <circle cx="112" cy="38" r="2" fill="#F59E0B" />
+  </svg>
+);
+
+const PsychologyBrainBackground: React.FC = () => (
+  <svg
+    viewBox="0 0 240 200"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-32 min-[360px]:w-40 min-[400px]:w-44 sm:w-54 md:w-64 lg:w-72 h-auto drop-shadow-sm select-none"
+    aria-hidden="true"
+  >
+    <defs>
+      <linearGradient id="brainBgGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#FDF2F4" />
+        <stop offset="60%" stopColor="#FAF0F2" />
+        <stop offset="100%" stopColor="#F5E3E7" />
+      </linearGradient>
+      <linearGradient id="brainStrokeGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stopColor="#781428" />
+        <stop offset="100%" stopColor="#A31D36" />
+      </linearGradient>
+    </defs>
+
+    {/* Psychology Brain Base Silhouette (Right hemisphere prominent in the space) */}
+    <path
+      d="M60 40 C35 40 20 60 18 85 C8 90 2 105 5 122 C12 135 24 148 40 152 C48 160 62 165 75 162 C88 168 108 165 120 152 C138 160 158 152 168 138 C182 125 185 105 175 90 C182 72 172 55 160 50 C155 30 132 15 110 15 C85 15 70 30 60 40 Z"
+      fill="url(#brainBgGrad)"
+      stroke="url(#brainStrokeGrad)"
+      strokeWidth="2.8"
+      strokeLinejoin="round"
+      strokeLinecap="round"
+    />
+
+    {/* Central Hemispheric Fissure */}
+    <path
+      d="M100 18 Q 96 55 102 90 Q 94 125 102 162"
+      stroke="#781428"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeDasharray="1 0"
+    />
+
+    {/* Left Cerebral Lobes (Gyri / Sulci) */}
+    <path
+      d="M55 58 Q 72 52 82 66 Q 70 78 52 75"
+      stroke="#781428"
+      strokeWidth="2"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M40 92 Q 62 88 72 102 Q 60 116 46 112"
+      stroke="#781428"
+      strokeWidth="2"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M52 125 Q 70 125 78 136 Q 64 144 56 136"
+      stroke="#781428"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M74 38 Q 88 50 82 72"
+      stroke="#A31D36"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      fill="none"
+    />
+
+    {/* Right Cerebral Lobes (Prominently visible in the right open gap) */}
+    <path
+      d="M142 58 Q 124 52 116 66 Q 128 78 146 75"
+      stroke="#781428"
+      strokeWidth="2"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M158 92 Q 134 88 124 102 Q 138 116 152 112"
+      stroke="#781428"
+      strokeWidth="2"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M145 125 Q 128 125 120 136 Q 134 144 142 136"
+      stroke="#781428"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M125 38 Q 112 50 118 72"
+      stroke="#A31D36"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      fill="none"
+    />
+    <path
+      d="M130 96 Q 115 108 120 130"
+      stroke="#A31D36"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      fill="none"
+    />
+
+    {/* Cognitive Synaptic Sparkle Dots in Gold & Bordeaux */}
+    <circle cx="72" cy="65" r="3.2" fill="#F59E0B" />
+    <circle cx="128" cy="65" r="3.2" fill="#F59E0B" />
+    <circle cx="62" cy="105" r="2.8" fill="#D97706" />
+    <circle cx="140" cy="105" r="2.8" fill="#D97706" />
+    <circle cx="100" cy="50" r="2.5" fill="#781428" />
+    <circle cx="102" cy="115" r="2.5" fill="#781428" />
+
+    {/* Neural Starbursts */}
+    <path d="M162 42 L166 47 L162 52 L158 47 Z" fill="#F59E0B" opacity="0.9" />
+    <path d="M168 85 L171 89 L168 93 L165 89 Z" fill="#F59E0B" opacity="0.9" />
+    <path d="M36 50 L39 54 L36 58 L33 54 Z" fill="#F59E0B" opacity="0.85" />
+  </svg>
+);
+
 export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   const scrollToOffers = () => {
     if (onCtaClick) {
@@ -108,80 +336,98 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   };
 
   return (
-    <header id="hero-section" className="pt-8 pb-12 sm:pt-12 sm:pb-16 md:pb-20 px-3 sm:px-6 overflow-hidden">
-      <div className="max-w-[1140px] mx-auto">
+    <header id="hero-section" className="pt-8 pb-12 sm:pt-12 sm:pb-16 md:pb-20 px-3 sm:px-6 overflow-hidden relative">
+      {/* 1. Arbusto com Flores no fundo bege mais escuro da página (lado esquerdo) */}
+      <div 
+        id="hero-bg-left-bush"
+        className="absolute -left-2 min-[360px]:-left-4 sm:-left-6 md:left-2 lg:left-8 xl:left-14 top-[50%] sm:top-[52%] md:top-[55%] -translate-y-1/2 z-0 pointer-events-none select-none opacity-90"
+        aria-hidden="true"
+      >
+        <FloralBushBackground />
+      </div>
+
+      {/* 2. Cérebro de Psicologia no fundo bege mais escuro da página (lado direito) */}
+      <div 
+        id="hero-bg-right-brain"
+        className="absolute -right-2 min-[360px]:-right-4 sm:-right-6 md:right-2 lg:right-8 xl:right-14 top-[48%] sm:top-[50%] md:top-[53%] -translate-y-1/2 z-0 pointer-events-none select-none opacity-90"
+        aria-hidden="true"
+      >
+        <PsychologyBrainBackground />
+      </div>
+
+      <div className="max-w-[1140px] mx-auto relative z-10">
         {/* Main Central Card Container */}
         <div 
           id="hero-card"
-          className="bg-[#F5EFE6] rounded-[28px] sm:rounded-[36px] md:rounded-[42px] border border-[#E5DACB] shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-5 sm:p-10 md:p-12 text-center transition-all duration-300 overflow-hidden"
+          className="bg-[#F5EFE6] rounded-[28px] sm:rounded-[36px] md:rounded-[42px] border border-[#E5DACB] shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-5 sm:p-10 md:p-12 text-center transition-all duration-300 relative overflow-hidden"
         >
-          {/* 2. Main Title (H1) com o Passaporte das Emoções e o Avião de papel no canto superior direito */}
-          <div className="relative isolate max-w-4xl mx-auto pt-3 sm:pt-5 md:pt-7">
-            {/* Avião de papel grande no canto superior direito */}
-            <div 
-              className="absolute -top-3 sm:-top-5 md:-top-7 right-1 sm:right-3 md:right-6 lg:right-8 z-20 pointer-events-none select-none"
-              aria-hidden="true"
+          {/* Avião de papel lúdico no canto superior direito do card, totalmente afastado do título e NUNCA sobrepondo nem acima da palavra 'Emoções' */}
+          <div 
+            className="absolute top-3 sm:top-5 md:top-6 right-3 sm:right-6 md:right-8 z-10 pointer-events-none select-none"
+            aria-hidden="true"
+          >
+            <svg 
+              className="w-9 h-9 sm:w-12 sm:h-12 md:w-14 md:h-14 drop-shadow-sm transform -rotate-6" 
+              viewBox="0 0 72 72" 
+              fill="none"
             >
-              <svg 
-                className="relative w-14 h-14 sm:w-18 sm:h-18 md:w-22 md:h-22 lg:w-24 lg:h-24 drop-shadow-md transform rotate-[-8deg] z-20" 
-                viewBox="0 0 72 72" 
-                fill="none"
-              >
-                {/* Asa Principal Superior */}
-                <polygon 
-                  points="8,40 64,12 28,62" 
-                  fill="#FAF6EE" 
-                  stroke="#781428" 
-                  strokeWidth="2.5" 
-                  strokeLinejoin="round" 
-                />
-                
-                {/* Faceta dobrada inferior com preenchimento vinho suave */}
-                <polygon 
-                  points="64,12 28,62 36,49" 
-                  fill="#FCE8EC" 
-                  stroke="#781428" 
-                  strokeWidth="2" 
-                  strokeLinejoin="round" 
-                />
-                
-                {/* Linhas de hachura do sombreado lateral */}
-                <g stroke="#781428" strokeWidth="1.6" strokeLinecap="round">
-                  <line x1="56" y1="20" x2="52" y2="26" />
-                  <line x1="49" y1="28" x2="45" y2="34" />
-                  <line x1="42" y1="36" x2="38" y2="43" />
-                  <line x1="35" y1="45" x2="31" y2="52" />
-                </g>
+              {/* Asa Principal Superior */}
+              <polygon 
+                points="8,40 64,12 28,62" 
+                fill="#FAF6EE" 
+                stroke="#781428" 
+                strokeWidth="2.5" 
+                strokeLinejoin="round" 
+              />
+              
+              {/* Faceta dobrada inferior com preenchimento vinho suave */}
+              <polygon 
+                points="64,12 28,62 36,49" 
+                fill="#FCE8EC" 
+                stroke="#781428" 
+                strokeWidth="2" 
+                strokeLinejoin="round" 
+              />
+              
+              {/* Linhas de hachura do sombreado lateral */}
+              <g stroke="#781428" strokeWidth="1.6" strokeLinecap="round">
+                <line x1="56" y1="20" x2="52" y2="26" />
+                <line x1="49" y1="28" x2="45" y2="34" />
+                <line x1="42" y1="36" x2="38" y2="43" />
+                <line x1="35" y1="45" x2="31" y2="52" />
+              </g>
 
-                {/* Asa lateral oposta visível em perspectiva */}
-                <polygon 
-                  points="64,12 36,49 48,55" 
-                  fill="#FAF6EE" 
-                  stroke="#781428" 
-                  strokeWidth="2.5" 
-                  strokeLinejoin="round" 
-                />
+              {/* Asa lateral oposta visível em perspectiva */}
+              <polygon 
+                points="64,12 36,49 48,55" 
+                fill="#FAF6EE" 
+                stroke="#781428" 
+                strokeWidth="2.5" 
+                strokeLinejoin="round" 
+              />
 
-                {/* Quilha dobrada de papel */}
-                <polygon 
-                  points="28,62 36,49 39,53" 
-                  fill="#F7C2CC" 
-                  stroke="#781428" 
-                  strokeWidth="1.8" 
-                  strokeLinejoin="round" 
-                />
+              {/* Quilha dobrada de papel */}
+              <polygon 
+                points="28,62 36,49 39,53" 
+                fill="#F7C2CC" 
+                stroke="#781428" 
+                strokeWidth="1.8" 
+                strokeLinejoin="round" 
+              />
 
-                {/* Vinco central dorsal */}
-                <line 
-                  x1="64" y1="12" 
-                  x2="28" y2="62" 
-                  stroke="#781428" 
-                  strokeWidth="2.5" 
-                  strokeLinecap="round" 
-                />
-              </svg>
-            </div>
+              {/* Vinco central dorsal */}
+              <line 
+                x1="64" y1="12" 
+                x2="28" y2="62" 
+                stroke="#781428" 
+                strokeWidth="2.5" 
+                strokeLinecap="round" 
+              />
+            </svg>
+          </div>
 
+          {/* 2. Main Title (H1) com o Passaporte das Emoções */}
+          <div className="relative isolate max-w-4xl mx-auto pt-4 sm:pt-6 md:pt-8">
             <h1 
               id="hero-heading"
               className="text-[32px] sm:text-[42px] md:text-[50px] lg:text-[56px] font-black text-[#111827] tracking-tight leading-[1.18] drop-shadow-[0_1px_1px_rgba(0,0,0,0.04)]"

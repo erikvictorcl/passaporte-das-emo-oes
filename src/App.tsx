@@ -10,7 +10,6 @@ import { PricingOffers } from './components/PricingOffers';
 import { AccessSteps } from './components/AccessSteps';
 import { Testimonials } from './components/Testimonials';
 import { Guarantee } from './components/Guarantee';
-import { PurchaseNotifications } from './components/PurchaseNotifications';
 import { MindMapItem } from './types';
 
 const MapPreviewModal = lazy(() =>
@@ -24,7 +23,6 @@ const UpgradeModal = lazy(() =>
 export default function App() {
   const [selectedMap, setSelectedMap] = useState<MindMapItem | null>(null);
   const [isUpgradeModalOpen, setIsUpgradeModalOpen] = useState(false);
-  const [notification, setNotification] = useState<string | null>(null);
 
   // Preload UpgradeModal chunk in idle time so opening it is instant
   useEffect(() => {
@@ -45,15 +43,8 @@ export default function App() {
     el?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const proceedToCheckout = (planName: string) => {
-    startTransition(() => {
-      setNotification(`Opção selecionada: ${planName}. O link de checkout oficial será inserido aqui.`);
-    });
-    setTimeout(() => {
-      startTransition(() => {
-        setNotification(null);
-      });
-    }, 4500);
+  const proceedToCheckout = (_planName?: string) => {
+    window.location.href = 'https://pay.wiapy.com/8DCci2o90bBY';
   };
 
   const handleSelectPlan = (planName: string) => {
@@ -140,26 +131,6 @@ export default function App() {
             onContinueBasicPackage={() => setIsUpgradeModalOpen(false)}
           />
         </Suspense>
-      )}
-
-      {/* Floating Purchase Notifications (Top-right corner) */}
-      <PurchaseNotifications />
-
-      {/* In-app Notification Toast */}
-      {notification && (
-        <div 
-          role="status"
-          className="fixed bottom-5 right-5 z-50 max-w-sm bg-[#1E2530] text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-2xl border border-[#781428] flex items-center justify-between gap-3 animate-in fade-in slide-in-from-bottom-2 duration-200"
-        >
-          <span>{notification}</span>
-          <button 
-            type="button" 
-            onClick={() => setNotification(null)}
-            className="text-[#F0BDC7] hover:text-white font-bold text-xs"
-          >
-            ✕
-          </button>
-        </div>
       )}
     </div>
   );
