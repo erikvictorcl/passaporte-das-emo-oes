@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Fundo bege suave e harmonioso, menos forte */
+.bg-textured-blue {
+  background-color: #EDE6D8;
+  background-image: none;
+}
+
+/* Custom scrollbar styling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Continuous Double Marquee Animations (Seamless Infinite Loop) */
+@keyframes marquee-to-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes marquee-to-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-to-left 48s linear infinite;
+}
+
+/* Smooth marquee for compact single-line banner */
+@keyframes marquee-banner-loop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-banner-carousel {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  animation: marquee-banner-loop 52s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-to-right 48s linear infinite;
+}
+
+/* Maintain continuous motion under all circumstances - no pause on hover, touch, or active states */
+.animate-marquee-left:hover,
+.animate-marquee-left:active,
+.animate-marquee-left:focus,
+.animate-marquee-right:hover,
+.animate-marquee-right:active,
+.animate-marquee-right:focus,
+.animate-banner-carousel:hover,
+.animate-banner-carousel:active,
+.animate-banner-carousel:focus {
+  animation-play-state: running !important;
+}
+
+/* ========================================================
+   SNAKE / UNDULATING WAVE MOTION (ONDULAÇÃO UNIFORME E SUAVE)
+   ======================================================== */
+
+/* Faixa Roxa: Ondulação vertical uniforme e suave */
+@keyframes snake-banner-uniform {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+}
+
+.animate-snake-banner {
+  animation: snake-banner-uniform 5.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Mapas Mentais (Fileira 1): Ondulação vertical uniforme e harmoniosa */
+@keyframes snake-card-uniform-1 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(6px);
+  }
+}
+
+.animate-snake-card-1 {
+  animation: snake-card-uniform-1 4.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Mapas Mentais (Fileira 2): Ondulação vertical uniforme em contra-fase */
+@keyframes snake-card-uniform-2 {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(6px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ========================================================
+   BUTTON SHINE / LIGHT BEAM EFFECT (FAIXA DE LUZ MAIS SUAVE E LENTA)
+   ======================================================== */
+@keyframes button-light-sweep {
+  0% {
+    transform: translateX(-160%) skewX(-25deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.75;
+  }
+  55% {
+    transform: translateX(260%) skewX(-25deg);
+    opacity: 0.75;
+  }
+  56%, 100% {
+    transform: translateX(260%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+.animate-btn-shine {
+  animation: button-light-sweep 3.2s ease-in-out infinite;
+  will-change: transform, opacity;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Passaporte das Emoções",
+  "description": "Trabalhe as emoções com o Passaporte das Emoções. Mais de 200 emoções trabalhadas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
