@@ -117,10 +117,11 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
           {/* BOTÕES DE AÇÃO */}
           <div className="space-y-3 pt-1">
             {/* BOTÃO PRINCIPAL — PACOTE BÔNUS */}
-            <button
-              type="button"
+            <a
+              href="https://pay.wiapy.com/TtbTafg3_XD"
+              target="_self"
               onClick={onSelectBonusPackage}
-              className="relative overflow-hidden w-full py-3.5 sm:py-4 px-5 bg-[#15803D] hover:bg-[#166534] active:scale-[0.99] text-white font-extrabold text-sm sm:text-base md:text-lg rounded-[12px] sm:rounded-[14px] shadow-[0_8px_24px_rgba(22,163,74,0.32)] hover:shadow-[0_12px_28px_rgba(22,163,74,0.42)] transition-all cursor-pointer text-center"
+              className="relative overflow-hidden block w-full py-3.5 sm:py-4 px-5 bg-[#15803D] hover:bg-[#166534] active:scale-[0.99] text-white font-extrabold text-sm sm:text-base md:text-lg rounded-[12px] sm:rounded-[14px] shadow-[0_8px_24px_rgba(22,163,74,0.32)] hover:shadow-[0_12px_28px_rgba(22,163,74,0.42)] transition-all cursor-pointer text-center no-underline"
             >
               {/* Faixa branca de luz a cada 2s */}
               <span 
@@ -128,16 +129,17 @@ export const UpgradeModal: React.FC<UpgradeModalProps> = ({
                 aria-hidden="true"
               />
               <span className="relative z-10">SIM! Quero o Pacote Bônus por R$ {upgradePrice}</span>
-            </button>
+            </a>
 
             {/* BOTÃO SECUNDÁRIO — PACOTE BÁSICO */}
-            <button
-              type="button"
+            <a
+              href="https://pay.wiapy.com/x6RdhmP0BDIZ"
+              target="_self"
               onClick={onContinueBasicPackage}
-              className="w-full py-3 sm:py-3.5 px-5 bg-[#FAF6EE] hover:bg-[#F2ECE0] active:scale-[0.99] text-[#475569] hover:text-[#1E2530] font-semibold text-xs sm:text-sm md:text-[15px] rounded-[12px] sm:rounded-[14px] border border-[#D0BEA2] transition-all cursor-pointer text-center"
+              className="block w-full py-3 sm:py-3.5 px-5 bg-[#FAF6EE] hover:bg-[#F2ECE0] active:scale-[0.99] text-[#475569] hover:text-[#1E2530] font-semibold text-xs sm:text-sm md:text-[15px] rounded-[12px] sm:rounded-[14px] border border-[#D0BEA2] transition-all cursor-pointer text-center no-underline"
             >
               Continuar apenas com o Pacote Básico
-            </button>
+            </a>
           </div>
         </div>
       </div>

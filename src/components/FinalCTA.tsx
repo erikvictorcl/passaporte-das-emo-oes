@@ -36,10 +36,10 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onCtaClick }) => {
 
         {/* CTA Button */}
         <div className="mt-8 flex flex-col items-center">
-          <button
-            type="button"
-            onClick={handleClick}
-            className="relative overflow-hidden inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#16A34A] hover:bg-[#15803D] active:scale-[0.99] text-white font-extrabold text-base sm:text-lg rounded-[11px] shadow-[0_8px_25px_rgba(22,163,74,0.35)] hover:shadow-[0_12px_30px_rgba(22,163,74,0.45)] transition-all duration-200 cursor-pointer w-full sm:w-auto min-w-[280px] group"
+          <a
+            href="https://pay.wiapy.com/MHeOiJKlOXoP"
+            target="_self"
+            className="relative overflow-hidden inline-flex items-center justify-center gap-2.5 px-8 py-4 bg-[#16A34A] hover:bg-[#15803D] active:scale-[0.99] text-white font-extrabold text-base sm:text-lg rounded-[11px] shadow-[0_8px_25px_rgba(22,163,74,0.35)] hover:shadow-[0_12px_30px_rgba(22,163,74,0.45)] transition-all duration-200 cursor-pointer w-full sm:w-auto min-w-[280px] group no-underline text-center"
           >
             {/* Faixa branca de luz a cada 2s */}
             <span 
@@ -48,7 +48,7 @@ export const FinalCTA: React.FC<FinalCTAProps> = ({ onCtaClick }) => {
             />
             <span className="relative z-10">Quero o Passaporte das Emoções</span>
             <ArrowRight className="relative z-10 w-5 h-5 text-white transition-transform group-hover:translate-x-1" />
-          </button>
+          </a>
 
           {/* Micro assurances */}
           <div className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-xs text-[#F0BDC7] font-medium">

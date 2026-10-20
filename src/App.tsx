@@ -43,8 +43,12 @@ export default function App() {
     el?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const proceedToCheckout = (_planName?: string) => {
-    window.location.href = 'https://pay.wiapy.com/8DCci2o90bBY';
+  const proceedToCheckout = (planName?: string) => {
+    if (planName === 'Pacote Básico') {
+      window.location.href = 'https://pay.wiapy.com/x6RdhmP0BDIZ';
+      return;
+    }
+    window.location.href = 'https://pay.wiapy.com/MHeOiJKlOXoP';
   };
 
   const handleSelectPlan = (planName: string) => {
@@ -127,8 +131,14 @@ export default function App() {
           <UpgradeModal
             isOpen={isUpgradeModalOpen}
             onClose={() => setIsUpgradeModalOpen(false)}
-            onSelectBonusPackage={() => setIsUpgradeModalOpen(false)}
-            onContinueBasicPackage={() => setIsUpgradeModalOpen(false)}
+            onSelectBonusPackage={() => {
+              setIsUpgradeModalOpen(false);
+              window.location.href = 'https://pay.wiapy.com/TtbTafg3_XD';
+            }}
+            onContinueBasicPackage={() => {
+              setIsUpgradeModalOpen(false);
+              window.location.href = 'https://pay.wiapy.com/x6RdhmP0BDIZ';
+            }}
           />
         </Suspense>
       )}

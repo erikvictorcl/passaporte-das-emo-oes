@@ -262,7 +262,7 @@ export const PricingOffers: React.FC<PricingOffersProps> = ({ onSelectPlan }) =>
 
               {/* CTA Button */}
               <a
-                href="https://pay.wiapy.com/8DCci2o90bBY"
+                href="https://pay.wiapy.com/MHeOiJKlOXoP"
                 target="_self"
                 className="relative overflow-hidden block w-full py-3.5 sm:py-4 px-6 bg-[#15803D] hover:bg-[#166534] active:scale-[0.99] text-white font-extrabold text-base sm:text-lg rounded-[14px] sm:rounded-[16px] shadow-[0_8px_24px_rgba(22,163,74,0.35)] hover:shadow-[0_12px_30px_rgba(22,163,74,0.45)] transition-all cursor-pointer text-center no-underline"
               >
