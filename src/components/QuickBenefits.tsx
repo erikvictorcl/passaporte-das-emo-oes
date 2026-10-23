@@ -344,7 +344,7 @@ export const QuickBenefits: React.FC = () => {
                 transform: revealed[2] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)',
               }}
             >
-              O drive vem organizado por pastas com temas, e as emoções já estão nomeadas para você, o que traz mais clareza e controle ao planejar os atendimentos. Sem burocracia: não precisa de e-mail nem de senha para entrar.
+              O material vem organizado por pastas com temas, e as emoções já estão nomeadas para você, o que traz mais clareza e controle ao planejar os atendimentos. Sem burocracia: não precisa de e-mail nem de senha para entrar.
             </p>
             
             {/* BLOCO 3: PARÁGRAFO 3 */}
