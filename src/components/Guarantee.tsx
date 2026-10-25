@@ -40,7 +40,7 @@ export const Guarantee: React.FC = () => {
           <div className="absolute top-[12%] bottom-[24%] left-[14%] right-[14%] flex flex-col items-center justify-center text-center px-4 sm:px-8 md:px-12 select-text pointer-events-auto">
             
             {/* Título com Garantia Incondicional e 'de 7 Dias' acompanhado do selo minimalista com check */}
-            <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-[32px] font-black text-[#781428] tracking-tight leading-snug">
+            <h2 className="title-3d-float-1 text-lg sm:text-2xl md:text-3xl lg:text-[32px] font-black text-[#781428] tracking-tight leading-snug">
               <span>Garantia Incondicional</span>
               <span className="flex items-center justify-center gap-2 mt-1 sm:mt-2 text-[#781428]">
                 <span>de 7 Dias</span>

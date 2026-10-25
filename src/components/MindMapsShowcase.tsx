@@ -1,5 +1,6 @@
 import React from 'react';
 import { MindMapItem } from '../types';
+import { WaveDivider } from './WaveDivider';
 
 interface MindMapsShowcaseProps {
   onSelectMap?: (map: MindMapItem) => void;
@@ -135,7 +136,7 @@ export const MindMapsShowcase: React.FC<MindMapsShowcaseProps> = ({ onSelectMap 
     >
       {/* Header Section (Matching Image Reference with Brand Colors) */}
       <div className="max-w-[800px] mx-auto text-center px-4 sm:px-6 mb-8 sm:mb-10 md:mb-12">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-extrabold text-[#1E2530] tracking-tight leading-tight">
+        <h2 className="title-3d-float-1 text-3xl sm:text-4xl md:text-5xl lg:text-[46px] font-extrabold text-[#1E2530] tracking-tight leading-tight">
           Veja os <span className="text-[#781428]">Passaportes</span> por Dentro
         </h2>
         
@@ -143,9 +144,13 @@ export const MindMapsShowcase: React.FC<MindMapsShowcaseProps> = ({ onSelectMap 
         <div className="w-16 sm:w-20 h-1 sm:h-1.5 bg-[#781428] rounded-full mx-auto mt-3 sm:mt-3.5" />
       </div>
 
-      {/* FAIXA BORDÔ COM ONDULAÇÃO UNIFORME E SUAVE - DIMENSÕES AMPLIADAS */}
-      <div className="relative w-full overflow-hidden py-1 sm:py-2">
-        <div className="animate-snake-banner bg-[#781428] py-10 sm:py-16 md:py-20 lg:py-22 relative w-full shadow-[inset_0_2px_12px_rgba(0,0,0,0.16)]">
+      {/* FAIXA BORDÔ COM ONDULAÇÃO UNIFORME E DIVISÓRIAS ONDULADAS INTEGRADAS */}
+      <div className="relative w-full bg-[#781428] my-10 sm:my-14 md:my-16 select-none">
+        {/* Divisória ondulada suave no topo do banner bordô, projetando-se para cima */}
+        <WaveDivider fillColor="#781428" position="top" />
+
+        {/* Conteúdo com overflow-hidden para os cartões rolarem continuamente sem estourar a tela */}
+        <div className="animate-snake-banner py-10 sm:py-16 md:py-20 lg:py-22 relative w-full overflow-hidden">
           <div className="space-y-6 sm:space-y-8 md:space-y-10">
             
             {/* FILEIRA 1: Movimento contínuo para a DIREITA com ondulação uniforme */}
@@ -200,6 +205,9 @@ export const MindMapsShowcase: React.FC<MindMapsShowcaseProps> = ({ onSelectMap 
 
           </div>
         </div>
+
+        {/* Divisória ondulada suave na base do banner bordô, projetando-se para baixo */}
+        <WaveDivider fillColor="#781428" position="bottom" />
       </div>
     </section>
   );

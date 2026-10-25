@@ -114,7 +114,7 @@ export const Testimonials: React.FC = () => {
             <span>PROVA SOCIAL REAL</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-[36px] font-extrabold text-[#1E2530] tracking-tight leading-tight">
+          <h2 className="title-3d-float-3 text-2xl sm:text-3xl md:text-[36px] font-extrabold text-[#1E2530] tracking-tight leading-tight">
             Quem já viu, <span className="text-[#781428]">aprovou</span>
           </h2>
 

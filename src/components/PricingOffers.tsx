@@ -16,7 +16,7 @@ export const PricingOffers: React.FC<PricingOffersProps> = ({ onSelectPlan }) =>
         
         {/* Section Header */}
         <div className="text-center max-w-xl mx-auto mb-10 sm:mb-14">
-          <h2 className="text-2xl sm:text-3xl md:text-[36px] font-extrabold text-[#1E2530] tracking-tight">
+          <h2 className="title-3d-float-1 text-2xl sm:text-3xl md:text-[36px] font-extrabold text-[#1E2530] tracking-tight">
             Escolha a melhor <span className="text-[#781428]">opção para você</span>
           </h2>
 
@@ -96,6 +96,13 @@ export const PricingOffers: React.FC<PricingOffersProps> = ({ onSelectPlan }) =>
                   <InfinityIcon className="w-5 h-5 text-[#781428] shrink-0 stroke-[2.8]" />
                   <span className="text-sm sm:text-[15px] font-bold text-[#1E2530]">
                     Acesso vitalício ao material principal
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 text-left">
+                  <Check className="w-5 h-5 text-[#1E2530] shrink-0 stroke-[2.8]" />
+                  <span className="text-sm sm:text-[15px] font-bold text-[#1E2530]">
+                    Suporte incluso
                   </span>
                 </div>
               </div>
@@ -207,6 +214,13 @@ export const PricingOffers: React.FC<PricingOffersProps> = ({ onSelectPlan }) =>
                   <InfinityIcon className="w-5 h-5 text-[#781428] shrink-0 stroke-[2.8]" />
                   <span className="text-sm sm:text-[15px] font-extrabold text-[#1E2530]">
                     Acesso vitalício ao material principal e bônus
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3 text-left">
+                  <Check className="w-5 h-5 text-[#16A34A] shrink-0 stroke-[3]" />
+                  <span className="text-sm sm:text-[15px] font-extrabold text-[#1E2530]">
+                    Suporte prioritário
                   </span>
                 </div>
               </div>

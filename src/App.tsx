@@ -10,6 +10,7 @@ import { PricingOffers } from './components/PricingOffers';
 import { AccessSteps } from './components/AccessSteps';
 import { Testimonials } from './components/Testimonials';
 import { Guarantee } from './components/Guarantee';
+import { PuzzleBackground } from './components/PuzzleBackground';
 import { MindMapItem } from './types';
 
 const MapPreviewModal = lazy(() =>
@@ -38,6 +39,76 @@ export default function App() {
     }
   }, []);
 
+  // 3) Revelação suave por rolagem em todas as seções (IntersectionObserver)
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mediaQuery.matches) return;
+
+    const mainEl = document.getElementById('conteudo-principal');
+    if (!mainEl) return;
+
+    // Seleciona blocos de conteúdo internos (títulos, subtítulos, cards, passos, depoimentos, caixas)
+    const elements = mainEl.querySelectorAll<HTMLElement>(
+      'section:not(#beneficios) h1, ' +
+      'section:not(#beneficios) h2, ' +
+      'section:not(#beneficios) > div > div:first-child, ' +
+      'section:not(#beneficios) .grid > div, ' +
+      'section:not(#beneficios) .space-y-4 > p, ' +
+      'section:not(#beneficios) #passos .space-y-3 > div, ' +
+      'section:not(#beneficios) #depoimentos .grid > div, ' +
+      'section:not(#beneficios) #garantia > div > div'
+    );
+
+    const targets: HTMLElement[] = [];
+
+    elements.forEach((el) => {
+      // Regra de Ouro: nunca aplicar em elementos fixos, faixa do topo, botões de compra, links do checkout ou iframes
+      if (
+        el.closest('#top-notification-bar') ||
+        el.tagName === 'BUTTON' ||
+        el.tagName === 'A' ||
+        el.querySelector('button, a[href*="wiapy"], iframe')
+      ) {
+        return;
+      }
+
+      el.classList.add('reveal-on-scroll');
+
+      // Stagger sequencial de até 150ms entre blocos irmãos
+      const parent = el.parentElement;
+      if (parent) {
+        const siblings = Array.from(parent.children).filter((c) => c.classList.contains('reveal-on-scroll'));
+        const index = siblings.indexOf(el);
+        if (index === 1) el.classList.add('reveal-stagger-1');
+        else if (index === 2) el.classList.add('reveal-stagger-2');
+        else if (index >= 3) el.classList.add('reveal-stagger-3');
+      }
+
+      targets.push(el);
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px',
+      }
+    );
+
+    targets.forEach((target) => observer.observe(target));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   const scrollToOffers = () => {
     const el = document.getElementById('ofertas');
     el?.scrollIntoView({ behavior: 'smooth' });
@@ -60,11 +131,14 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden flex flex-col bg-[#EDE6D8] bg-textured-blue text-[#1E2530] font-['Plus_Jakarta_Sans',sans-serif]">
+    <div className="min-h-screen w-full flex flex-col bg-[#EDE6D8] bg-textured-blue text-[#1E2530] font-['Plus_Jakarta_Sans',sans-serif]">
       {/* 1. FAIXA SUPERIOR */}
       <TopBar />
 
-      <main id="conteudo-principal" className="flex-1 flex flex-col">
+      <main id="conteudo-principal" className="flex-1 flex flex-col relative overflow-x-hidden">
+        {/* 4) QUEBRA-CABEÇAS DISCRETOS NO FUNDO DA PÁGINA (LATERAIS 0-12% E 88-100%) */}
+        <PuzzleBackground />
+
         {/* 2. HERO */}
         <Hero 
           onCtaClick={scrollToOffers}

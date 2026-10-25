@@ -176,3 +176,175 @@
   animation: button-light-sweep 3.2s ease-in-out infinite;
   will-change: transform, opacity;
 }
+
+/* ========================================================
+   GLOBAL SCROLL REVEAL (MESMO EFEITO SUAVE DA SEÇÃO 2)
+   ======================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+/* Stagger sequencial para itens irmãos (máx 150ms) */
+.reveal-stagger-1 { transition-delay: 50ms; }
+.reveal-stagger-2 { transition-delay: 100ms; }
+.reveal-stagger-3 { transition-delay: 150ms; }
+
+/* ========================================================
+   3D SECTION TITLES FLOATING (SUTIL, NÍTIDO E DESINCRONIZADO)
+   ======================================================== */
+@keyframes title-float-3d-var1 {
+  0%, 100% {
+    transform: perspective(600px) translateY(0px) rotateX(0deg) rotateY(0deg);
+    filter: drop-shadow(0 2px 5px rgba(30, 37, 48, 0.05));
+  }
+  50% {
+    transform: perspective(600px) translateY(-5px) rotateX(1.4deg) rotateY(-0.8deg);
+    filter: drop-shadow(0 7px 12px rgba(30, 37, 48, 0.12));
+  }
+}
+
+@keyframes title-float-3d-var2 {
+  0%, 100% {
+    transform: perspective(600px) translateY(0px) rotateX(0deg) rotateY(0deg);
+    filter: drop-shadow(0 2px 5px rgba(30, 37, 48, 0.05));
+  }
+  50% {
+    transform: perspective(600px) translateY(-4.5px) rotateX(-1.2deg) rotateY(0.9deg);
+    filter: drop-shadow(0 6px 11px rgba(30, 37, 48, 0.11));
+  }
+}
+
+@keyframes title-float-3d-var3 {
+  0%, 100% {
+    transform: perspective(600px) translateY(0px) rotateX(0deg) rotateY(0deg);
+    filter: drop-shadow(0 2px 5px rgba(30, 37, 48, 0.05));
+  }
+  50% {
+    transform: perspective(600px) translateY(-5.5px) rotateX(1deg) rotateY(1deg);
+    filter: drop-shadow(0 8px 14px rgba(30, 37, 48, 0.13));
+  }
+}
+
+.title-3d-float-1 {
+  display: inline-block;
+  will-change: transform;
+  animation: title-float-3d-var1 4.8s ease-in-out infinite;
+  backface-visibility: hidden;
+}
+
+.title-3d-float-2 {
+  display: inline-block;
+  will-change: transform;
+  animation: title-float-3d-var2 5.4s ease-in-out -1.8s infinite;
+  backface-visibility: hidden;
+}
+
+.title-3d-float-3 {
+  display: inline-block;
+  will-change: transform;
+  animation: title-float-3d-var3 5.0s ease-in-out -3.2s infinite;
+  backface-visibility: hidden;
+}
+
+/* ========================================================
+   SMOOTH & CALM WINE PUZZLE PIECES (FLUXO SUAVE E TRANQUILO)
+   ======================================================== */
+@keyframes puzzle-pop-dissolve {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(var(--rot-start, 0deg)) scale(0.8);
+    filter: blur(0px);
+  }
+  18% {
+    opacity: var(--peak-opacity, 0.38);
+    transform: translate3d(calc(var(--dx, 0px) * 0.18), calc(var(--dy, 0px) * 0.18), 0) rotate(calc(var(--rot-start, 0deg) + var(--rot-delta, 0deg) * 0.18)) scale(1);
+    filter: blur(0px);
+  }
+  68% {
+    opacity: var(--peak-opacity, 0.38);
+    transform: translate3d(calc(var(--dx, 0px) * 0.68), calc(var(--dy, 0px) * 0.68), 0) rotate(calc(var(--rot-start, 0deg) + var(--rot-delta, 0deg) * 0.68)) scale(1);
+    filter: blur(0px);
+  }
+  88% {
+    opacity: calc(var(--peak-opacity, 0.38) * 0.45);
+    filter: blur(1px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--dx, 0px), var(--dy, 0px), 0) rotate(calc(var(--rot-start, 0deg) + var(--rot-delta, 0deg))) scale(0.95);
+    filter: blur(2px);
+  }
+}
+
+.puzzle-slot-piece {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  will-change: transform, opacity;
+  display: none;
+}
+
+.puzzle-slot-piece.is-active {
+  display: block;
+  animation-name: puzzle-pop-dissolve;
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  animation-fill-mode: forwards;
+}
+
+/* ========================================================
+   WAVE DIVIDER CONTINUOUS FLOW ANIMATION
+   ======================================================== */
+@keyframes wave-scroll-horizontal {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-wave-flow {
+  animation: wave-scroll-horizontal 16s linear infinite;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* ========================================================
+   ACESSIBILIDADE: PREFERS-REDUCED-MOTION
+   ======================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .title-3d-float-1,
+  .title-3d-float-2,
+  .title-3d-float-3 {
+    animation: none !important;
+    transform: none !important;
+  }
+  .puzzle-slot-piece {
+    display: none !important;
+    animation: none !important;
+  }
+  .puzzle-reduced-static {
+    display: block !important;
+    opacity: 0.2 !important;
+  }
+  .animate-wave-flow {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+

@@ -35,7 +35,7 @@ export const AccessSteps: React.FC = () => {
         
         {/* Section Heading with Underline Accent */}
         <div className="text-center max-w-xl mx-auto mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-[#1E2530] tracking-tight leading-tight">
+          <h2 className="title-3d-float-2 text-2xl sm:text-3xl md:text-[34px] font-extrabold text-[#1E2530] tracking-tight leading-tight">
             Como você vai <span className="text-[#781428]">receber o acesso</span>
           </h2>
           {/* Accent Underline Bar */}

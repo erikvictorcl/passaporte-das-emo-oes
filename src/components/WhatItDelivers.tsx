@@ -74,7 +74,7 @@ export const WhatItDelivers: React.FC = () => {
             <span>BÔNUS EXCLUSIVOS</span>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-[#1E2530] tracking-tight leading-tight">
+          <h2 className="title-3d-float-3 text-2xl sm:text-3xl md:text-[34px] font-extrabold text-[#1E2530] tracking-tight leading-tight">
             E tem mais! <span className="text-[#781428]">Leve também:</span>
           </h2>
         </div>

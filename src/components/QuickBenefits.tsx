@@ -292,7 +292,7 @@ export const QuickBenefits: React.FC = () => {
           >
             <h2 
               id="heading-leia-antes"
-              className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-[#1E2530] tracking-tight leading-tight"
+              className="title-3d-float-2 text-2xl sm:text-3xl md:text-[34px] font-extrabold text-[#1E2530] tracking-tight leading-tight"
             >
               Leia antes de <span className="text-[#781428]">adquirir o material.</span>
             </h2>
