@@ -10,7 +10,6 @@ import { PricingOffers } from './components/PricingOffers';
 import { AccessSteps } from './components/AccessSteps';
 import { Testimonials } from './components/Testimonials';
 import { Guarantee } from './components/Guarantee';
-import { PuzzleBackground } from './components/PuzzleBackground';
 import { MindMapItem } from './types';
 
 const MapPreviewModal = lazy(() =>
@@ -97,8 +96,8 @@ export default function App() {
         });
       },
       {
-        threshold: 0.08,
-        rootMargin: '0px 0px -30px 0px',
+        threshold: 0.01,
+        rootMargin: '140px 0px 40px 0px',
       }
     );
 
@@ -136,9 +135,6 @@ export default function App() {
       <TopBar />
 
       <main id="conteudo-principal" className="flex-1 flex flex-col relative overflow-x-hidden">
-        {/* 4) QUEBRA-CABEÇAS DISCRETOS NO FUNDO DA PÁGINA (LATERAIS 0-12% E 88-100%) */}
-        <PuzzleBackground />
-
         {/* 2. HERO */}
         <Hero 
           onCtaClick={scrollToOffers}

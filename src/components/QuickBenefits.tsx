@@ -52,8 +52,8 @@ export const QuickBenefits: React.FC = () => {
         });
       },
       {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.01,
+        rootMargin: '180px 0px 50px 0px',
       }
     );
 
@@ -284,10 +284,10 @@ export const QuickBenefits: React.FC = () => {
           <div 
             ref={(el) => { blockRefs.current[0] = el; }}
             data-block-idx="0"
-            className="text-center mb-6 sm:mb-8 transition-all duration-700 ease-out will-change-transform"
+            className="text-center mb-6 sm:mb-8 transition-all duration-500 ease-out will-change-transform"
             style={{
               opacity: revealed[0] ? 1 : 0,
-              transform: revealed[0] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)',
+              transform: revealed[0] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 10px, 0)',
             }}
           >
             <h2 
@@ -298,10 +298,10 @@ export const QuickBenefits: React.FC = () => {
             </h2>
             {/* Traço decorativo: desenha crescendo do centro para as pontas via transform: scaleX */}
             <div 
-              className="w-14 h-1 bg-[#781428] mx-auto mt-3 rounded-full transition-transform duration-700 ease-out origin-center will-change-transform" 
+              className="w-14 h-1 bg-[#781428] mx-auto mt-3 rounded-full transition-transform duration-500 ease-out origin-center will-change-transform" 
               style={{
                 transform: revealed[0] ? 'scaleX(1)' : 'scaleX(0)',
-                transitionDelay: '250ms',
+                transitionDelay: '100ms',
               }}
             />
           </div>
@@ -313,20 +313,20 @@ export const QuickBenefits: React.FC = () => {
             <p 
               ref={(el) => { blockRefs.current[1] = el; }}
               data-block-idx="1"
-              className="transition-all duration-700 ease-out will-change-transform"
+              className="transition-all duration-500 ease-out will-change-transform"
               style={{
                 opacity: revealed[1] ? 1 : 0,
-                transform: revealed[1] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)',
+                transform: revealed[1] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 10px, 0)',
               }}
             >
               Com o{' '}
               {/* Marca-texto animado em 'Passaporte das Emoções' */}
               <span className="relative inline-block px-1 py-0.5 rounded font-bold text-[#1E2530]">
                 <span 
-                  className="absolute inset-0 bg-[#781428]/12 rounded transition-transform duration-700 ease-out origin-left pointer-events-none will-change-transform"
+                  className="absolute inset-0 bg-[#781428]/12 rounded transition-transform duration-500 ease-out origin-left pointer-events-none will-change-transform"
                   style={{
                     transform: revealed[1] ? 'scaleX(1)' : 'scaleX(0)',
-                    transitionDelay: '300ms',
+                    transitionDelay: '120ms',
                   }}
                 />
                 <span className="relative">Passaporte das Emoções</span>
@@ -338,10 +338,10 @@ export const QuickBenefits: React.FC = () => {
             <p 
               ref={(el) => { blockRefs.current[2] = el; }}
               data-block-idx="2"
-              className="transition-all duration-700 ease-out will-change-transform"
+              className="transition-all duration-500 ease-out will-change-transform"
               style={{
                 opacity: revealed[2] ? 1 : 0,
-                transform: revealed[2] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)',
+                transform: revealed[2] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 10px, 0)',
               }}
             >
               O material vem organizado por pastas com temas, e as emoções já estão nomeadas para você, o que traz mais clareza e controle ao planejar os atendimentos. Sem burocracia: não precisa de e-mail nem de senha para entrar.
@@ -351,19 +351,19 @@ export const QuickBenefits: React.FC = () => {
             <p 
               ref={(el) => { blockRefs.current[3] = el; }}
               data-block-idx="3"
-              className="text-center text-base sm:text-[18px] md:text-[19px] text-[#1E2530] pt-2 transition-all duration-700 ease-out will-change-transform"
+              className="text-center text-base sm:text-[18px] md:text-[19px] text-[#1E2530] pt-2 transition-all duration-500 ease-out will-change-transform"
               style={{
                 opacity: revealed[3] ? 1 : 0,
-                transform: revealed[3] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)',
+                transform: revealed[3] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 10px, 0)',
               }}
             >
               {/* Marca-texto animado na frase em negrito */}
               <span className="relative inline-block px-1.5 py-0.5 rounded">
                 <span 
-                  className="absolute inset-0 bg-[#781428]/12 rounded transition-transform duration-700 ease-out origin-left pointer-events-none will-change-transform"
+                  className="absolute inset-0 bg-[#781428]/12 rounded transition-transform duration-500 ease-out origin-left pointer-events-none will-change-transform"
                   style={{
                     transform: revealed[3] ? 'scaleX(1)' : 'scaleX(0)',
-                    transitionDelay: '350ms',
+                    transitionDelay: '150ms',
                   }}
                 />
                 <span className="relative">
@@ -381,10 +381,10 @@ export const QuickBenefits: React.FC = () => {
             <h3 
               ref={(el) => { blockRefs.current[4] = el; }}
               data-block-idx="4"
-              className="text-base sm:text-[18px] md:text-[19px] font-bold text-[#1E2530] mb-3.5 text-center sm:text-left transition-all duration-700 ease-out will-change-transform"
+              className="text-base sm:text-[18px] md:text-[19px] font-bold text-[#1E2530] mb-3.5 text-center sm:text-left transition-all duration-500 ease-out will-change-transform"
               style={{
                 opacity: revealed[4] ? 1 : 0,
-                transform: revealed[4] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 16px, 0)',
+                transform: revealed[4] ? 'translate3d(0, 0, 0)' : 'translate3d(0, 10px, 0)',
               }}
             >
               Benefícios em garantir o material
@@ -401,11 +401,11 @@ export const QuickBenefits: React.FC = () => {
                     key={index}
                     ref={(el) => { blockRefs.current[itemIdx] = el; }}
                     data-block-idx={itemIdx}
-                    className="flex items-center gap-2.5 transition-all duration-600 ease-out will-change-transform"
+                    className="flex items-center gap-2.5 transition-all duration-500 ease-out will-change-transform"
                     style={{
                       opacity: isItemRevealed ? 1 : 0,
-                      transform: isItemRevealed ? 'translate3d(0, 0, 0)' : 'translate3d(-12px, 0, 0)',
-                      transitionDelay: `${index * 140}ms`,
+                      transform: isItemRevealed ? 'translate3d(0, 0, 0)' : 'translate3d(-8px, 0, 0)',
+                      transitionDelay: `${index * 80}ms`,
                     }}
                   >
                     <svg 
