@@ -46,7 +46,7 @@
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: marquee-to-left 48s linear infinite;
+  animation: marquee-to-left 78s linear infinite;
 }
 
 /* Smooth marquee for compact single-line banner */
@@ -73,7 +73,7 @@
   display: flex;
   width: max-content;
   will-change: transform;
-  animation: marquee-to-right 48s linear infinite;
+  animation: marquee-to-right 78s linear infinite;
 }
 
 /* Maintain continuous motion under all circumstances - no pause on hover, touch, or active states */

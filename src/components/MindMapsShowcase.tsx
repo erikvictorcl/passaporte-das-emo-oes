@@ -12,7 +12,7 @@ export interface ShowcaseMindMapItem extends MindMapItem {
   srcSet?: string;
 }
 
-// 8 Optimized Local WebP URLs (Directly generated from the provided Imgur links)
+// 13 Optimized Local WebP URLs (Directly generated from the provided Imgur links)
 const imgurJornal1 = '/images/jornal-1-260.webp';
 const imgurJornal2 = '/images/jornal-2-260.webp';
 const imgurJornal3 = '/images/jornal-3-260.webp';
@@ -22,7 +22,19 @@ const imgurJornal6 = '/images/jornal-6-260.webp';
 const imgurJornal7 = '/images/jornal-7-260.webp';
 const imgurJornal8 = '/images/jornal-8-260.webp';
 
-// All 8 individual Passaportes das Emoções
+// Novos Passaportes adicionados a partir dos links Imgur enviados:
+// https://imgur.com/a/ganeAw0
+const imgurJornal9 = '/images/jornal-9-260.webp';
+// https://imgur.com/a/enGttIu
+const imgurJornal10 = '/images/jornal-10-260.webp';
+// https://imgur.com/a/wNitBsp
+const imgurJornal11 = '/images/jornal-11-260.webp';
+// https://imgur.com/a/8PI9QZZ
+const imgurJornal12 = '/images/jornal-12-260.webp';
+// https://imgur.com/a/qCVzwdO
+const imgurJornal13 = '/images/jornal-13-260.webp';
+
+// All 13 individual Passaportes das Emoções
 export const sampleMindMaps: ShowcaseMindMapItem[] = [
   {
     id: 'showcase-1',
@@ -112,19 +124,68 @@ export const sampleMindMaps: ShowcaseMindMapItem[] = [
     srcSet: '/images/jornal-8-180.webp 180w, /images/jornal-8-260.webp 260w, /images/jornal-8-420.webp 420w, /images/jornal-8-600.webp 600w, /images/jornal-8-1491.webp 1491w',
     accentColor: '#781428',
   },
+  {
+    id: 'showcase-9',
+    title: 'Passaporte das Emoções — Jornada do Medo',
+    category: 'Enfrentamento do Medo',
+    authorOrSchool: 'Psicologia Infantil',
+    description: 'Atividade lúdica na caverna de cristais para identificar o medo, reconhecer recursos de segurança e dar passos possíveis.',
+    branches: ['Meu Medo', 'Minha Segurança', 'Meu Passo Possível'],
+    previewUrl: imgurJornal9,
+    srcSet: '/images/jornal-9-180.webp 180w, /images/jornal-9-260.webp 260w, /images/jornal-9-420.webp 420w, /images/jornal-9-600.webp 600w, /images/jornal-9-1491.webp 1491w',
+    accentColor: '#781428',
+  },
+  {
+    id: 'showcase-10',
+    title: 'Passaporte das Emoções — Jornada do Nervosismo',
+    category: 'Regulação da Ansiedade',
+    authorOrSchool: 'Psicologia Infantil',
+    description: 'Ajuda a criança a perceber os sinais do corpo em momentos de nervosismo e encontrar apoio para agir no próprio tempo.',
+    branches: ['Antes de Começar', 'Meu Corpo', 'Meu Apoio', 'No Meu Tempo'],
+    previewUrl: imgurJornal10,
+    srcSet: '/images/jornal-10-180.webp 180w, /images/jornal-10-260.webp 260w, /images/jornal-10-420.webp 420w, /images/jornal-10-600.webp 600w, /images/jornal-10-1491.webp 1491w',
+    accentColor: '#A31D36',
+  },
+  {
+    id: 'showcase-11',
+    title: 'Passaporte das Emoções — Quando Riem de Mim',
+    category: 'Fortalecimento Emocional',
+    authorOrSchool: 'Psicologia Infantil',
+    description: 'Acolhe a dor do constrangimento ou zombaria entre pares, estimulando a validação dos sentimentos e busca de apoio.',
+    branches: ['O que Aconteceu', 'Como Fiquei', 'Quero Apoio'],
+    previewUrl: imgurJornal11,
+    srcSet: '/images/jornal-11-180.webp 180w, /images/jornal-11-260.webp 260w, /images/jornal-11-420.webp 420w, /images/jornal-11-600.webp 600w, /images/jornal-11-1491.webp 1491w',
+    accentColor: '#781428',
+  },
+  {
+    id: 'showcase-12',
+    title: 'Passaporte das Emoções — Contar Algo Difícil',
+    category: 'Comunicação e Confiança',
+    authorOrSchool: 'Psicologia Infantil',
+    description: 'Cenário acolhedor com pinguins para ajudar a criança a expressar segredos, dores ou situações difíceis com um adulto de confiança.',
+    branches: ['Quero Ser Ouvido', 'Alguém de Confiança', 'No Meu Tempo'],
+    previewUrl: imgurJornal12,
+    srcSet: '/images/jornal-12-180.webp 180w, /images/jornal-12-260.webp 260w, /images/jornal-12-420.webp 420w, /images/jornal-12-600.webp 600w, /images/jornal-12-1491.webp 1491w',
+    accentColor: '#A31D36',
+  },
+  {
+    id: 'showcase-13',
+    title: 'Passaporte das Emoções — Jornada da Insegurança',
+    category: 'Autoconfiança e Apoio',
+    authorOrSchool: 'Psicologia Infantil',
+    description: 'Atividade acolhedora na estufa botânica para transformar dúvidas e inseguranças em passos possíveis com base segura.',
+    branches: ['Minha Dúvida', 'Minhas Bases', 'Um Passo Possível'],
+    previewUrl: imgurJornal13,
+    srcSet: '/images/jornal-13-180.webp 180w, /images/jornal-13-260.webp 260w, /images/jornal-13-420.webp 420w, /images/jornal-13-600.webp 600w, /images/jornal-13-1491.webp 1491w',
+    accentColor: '#781428',
+  },
 ];
 
-// ROW 1 & ROW 2 using all 8 individual passaportes
+// ROW 1 & ROW 2 using all 13 individual passaportes in rich alternating sequence
 export const row1Maps: ShowcaseMindMapItem[] = sampleMindMaps;
 export const row2Maps: ShowcaseMindMapItem[] = [
-  sampleMindMaps[4],
-  sampleMindMaps[5],
-  sampleMindMaps[6],
-  sampleMindMaps[7],
-  sampleMindMaps[0],
-  sampleMindMaps[1],
-  sampleMindMaps[2],
-  sampleMindMaps[3],
+  ...sampleMindMaps.slice(6),
+  ...sampleMindMaps.slice(0, 6),
 ];
 
 export const MindMapsShowcase: React.FC<MindMapsShowcaseProps> = ({ onSelectMap }) => {
